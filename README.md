@@ -73,3 +73,8 @@ The project code is written in Arduino IDE and utilizes the following libraries:
 
 1. Assemble the components as described in the "Components Used" section.
 2. Upload the code to the Arduino Uno board using Arduino IDE.
+
+---
+
+## Acknowledgments
+I completed the project under the guidance of the teachers at the Technical University of Cluj-Napoca.
