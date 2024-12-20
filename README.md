@@ -6,8 +6,8 @@ This project aims to implement a safety system designed specifically for coal mi
 
 <br>
 <div align=center>
-   <img src="helmet1.jpg" width=450>
-   <img src="helmet2.jpg" width=450>
+   <img src="helmet1.jpg" width=400>
+   <img src="helmet2.jpg" width=400>
 </div>
 
 ---
