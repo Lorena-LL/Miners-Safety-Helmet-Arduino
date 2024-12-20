@@ -4,7 +4,11 @@
 
 This project aims to implement a safety system designed specifically for coal miners. The smart helmet automatically monitors environmental conditions, providing warnings for hazardous gas levels, extreme temperatures, and insufficient light. This not only enhances miners' safety but also increases productivity by eliminating the need for manual testing with multiple devices.
 
-<br><div align=center><img src="helmet.jpg" width=500></div>
+<br>
+<div align=center>
+   <img src="helmet1.jpg" width=450>
+   <img src="helmet2.jpg" width=450>
+</div>
 
 ---
 
@@ -21,10 +25,17 @@ To develop this project, the following components were used:
    - Red LED (connected to pin 13): Indicates gas concentration hazards.  
    - Yellow LED (connected to pin 10): Indicates temperature hazards.
 7. **LED Headlamp**: Turns on in low-light conditions. Powered via pin 11.
-8. **Resistors**: Two 200-ohm resistors for circuit connections.
-9. **Breadboard**: For connecting components.
-10. **Jumper Wires**: For wiring the circuit.
-11. **Protective Helmet**: To house all components.
+8. **Fan**: Activates when temperature exceeds 25°C. Controlled via the motor driver.
+9. **L293D Motor Driver**: Controls the fan motor. Connected to pins 5 and 6 for input.
+10. **Resistors**: Two 200-ohm resistors for circuit connections.
+11. **Breadboard**: For connecting components.
+12. **Jumper Wires**: For wiring the circuit.
+13. **Protective Helmet**: To house all components.
+
+<br>
+<div align=center>
+   <img src="circuit_image.png" width=500>
+</div>
 
 ---
 
@@ -38,6 +49,7 @@ To develop this project, the following components were used:
 ### Temperature Monitoring
 - The DHT11 sensor monitors temperature.
   - If the temperature is above **25°C** or below **-5°C**, the yellow LED blinks, and the buzzer emits a unique warning sound.
+  - If the temperature is above **25°C**, the fan is automatically activated via the L293D motor driver to cool the miner. The fan switches off when the temperature drops below this threshold.
 
 ### Hazard Priority
 - In the event of both gas and temperature hazards, the gas hazard takes priority due to the higher risk of explosion.
@@ -61,4 +73,3 @@ The project code is written in Arduino IDE and utilizes the following libraries:
 
 1. Assemble the components as described in the "Components Used" section.
 2. Upload the code to the Arduino Uno board using Arduino IDE.
-
