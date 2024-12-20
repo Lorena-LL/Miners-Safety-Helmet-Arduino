@@ -31,6 +31,9 @@
 #define LED_YELLOW_PIN                    10
 #define LIGHT_PIN                         11
 
+const int motorPin1  = 5; // Pin  7 of L293
+const int motorPin2  = 6;  // Pin  2 of L293
+
 
 // MQ-2 part beginning
 #define RL_VALUE                     (5)
@@ -88,6 +91,12 @@ void setup() {
   pinMode(LED_YELLOW_PIN, OUTPUT);
   pinMode(LIGHT_PIN,OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
+
+  pinMode(motorPin1, OUTPUT);
+  pinMode(motorPin2, OUTPUT);
+
+  digitalWrite(motorPin1, LOW);
+  digitalWrite(motorPin2, LOW);
 
   digitalWrite(LED_RED_PIN,LOW);
   digitalWrite(LED_YELLOW_PIN,LOW);
@@ -156,11 +165,16 @@ void loop() {
         noTone(BUZZER_PIN);
         digitalWrite(BUZZER_PIN,HIGH);
         delay(500);
+        if(vTemp>25.0){
+          digitalWrite(motorPin1, HIGH);
+          // digitalWrite(motorPin2, LOW);
+        }
       }
       else{
         digitalWrite(LED_YELLOW_PIN,LOW);
         noTone(BUZZER_PIN);
         digitalWrite(BUZZER_PIN,HIGH);
+        digitalWrite(motorPin1, LOW);
       }
     }
 
